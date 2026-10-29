@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "electionYear": 2026,
+  "description": "Real-data TSE fixture: verbatim CSV rows for two Minas Gerais municipalities. Not a complete election.",
+  "files": [
+    {
+      "id": "tse-section-votes",
+      "path": "votacao_secao_2026_BR.zip",
+      "url": "fixture",
+      "bytes": 3002,
+      "sha256": "83950d940f8359def1a851f298347010284d851b5f72ca5ea4dfd2550c1d3770",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Verbatim rows of votacao_secao_2026_BR.zip for MG:40614 and MG:40657 (TTE rows within these municipalities only)."
+    },
+    {
+      "id": "tse-section-details",
+      "path": "detalhe_votacao_secao_2026.zip",
+      "url": "fixture",
+      "bytes": 1732,
+      "sha256": "9756071ccc752ee570321c48103a540e07f1f73d527167cb6ebe87403de3b120",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Verbatim rows of detalhe_votacao_secao_2026.zip for MG:40614 and MG:40657 (TTE rows within these municipalities only)."
+    },
+    {
+      "id": "tse-temporary-transfers",
+      "path": "transf_temporaria_secao_2026.zip",
+      "url": "fixture",
+      "bytes": 490,
+      "sha256": "67b0a7352ca8be7b5a9b65efb58f25414fdf0009b15ab33b07c3d6c9933c1864",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Verbatim rows of transf_temporaria_secao_2026.zip for MG:40614 and MG:40657 (TTE rows within these municipalities only)."
+    },
+    {
+      "id": "tse-candidates",
+      "path": "consulta_cand_2026.zip",
+      "url": "fixture",
+      "bytes": 2164,
+      "sha256": "ba8262f0d48218a8d78c4959e4c8cfb7417e5b1a06dd39c3ada41dab3bc6d546",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Verbatim rows of consulta_cand_2026.zip for MG:40614 and MG:40657 (TTE rows within these municipalities only)."
+    },
+    {
+      "id": "tse-candidates-complementary",
+      "path": "consulta_cand_complementar_2026.zip",
+      "url": "fixture",
+      "bytes": 1281,
+      "sha256": "9d7f5d24c0709ffbd80927b9e6de5b018e36bfb764b5149cf8fcc15f2817377c",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Verbatim complementary registry rows for the presidential candidacies."
+    }
+  ]
+}

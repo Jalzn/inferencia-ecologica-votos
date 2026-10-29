@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the software version and dataset version used in your work."
+title: "Eleições: exploring conditional ecological-inference estimates"
+type: software
+version: 0.1.0
+authors:
+  - name: "jalzn"
+license: MIT

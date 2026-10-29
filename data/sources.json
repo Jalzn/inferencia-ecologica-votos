@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0",
+  "electionYear": 2026,
+  "description": "Pinned external inputs. Files live under data/raw/ (not in Git) and must match these sizes and SHA-256 digests.",
+  "files": [
+    {
+      "id": "tse-section-votes",
+      "path": "tse/votacao_secao_2026_BR.zip",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_BR.zip",
+      "bytes": 241891087,
+      "sha256": "c928321f63f2d095706fca73d4607c048d2ada23bda6876455d6911aaf1bc9c1",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Presidential votes by ballot number, polling section and round."
+    },
+    {
+      "id": "tse-section-details",
+      "path": "tse/detalhe_votacao_secao_2026.zip",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/detalhe_votacao_secao/detalhe_votacao_secao_2026.zip",
+      "bytes": 234357769,
+      "sha256": "8ef9ce3a85cde260471faf7a83a9b4f5ccf3993fdda942aacaa658574344789c",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Electorate, turnout, blank and null totals, installation status and polling place by section and round."
+    },
+    {
+      "id": "tse-temporary-transfers",
+      "path": "tse/transf_temporaria_secao_2026.zip",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/perfil_eleitor_tte/transf_temporaria_secao_2026.zip",
+      "bytes": 23039781,
+      "sha256": "7c7cf0b4b9c8bd3230157aceb08eb8c6c164d1fe44e536bfc5fa4296a9bdca22",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Registered temporary voter transfers between sections, by round."
+    },
+    {
+      "id": "tse-candidates",
+      "path": "tse/consulta_cand_2026.zip",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+      "bytes": 3240701,
+      "sha256": "c017f3200d33c23b43a8e7ba32af5b3f642903e53718bdf9e84bfd939084bc8c",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Candidate registry used to verify ballot numbers and names."
+    },
+    {
+      "id": "tse-candidates-complementary",
+      "path": "tse/consulta_cand_complementar_2026.zip",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "bytes": 1359797,
+      "sha256": "dd20aa6c325c3dfa68f77248f7254541b95bfdadd865f5faf418aad8dffb3428",
+      "retrieved": "2026-10-27",
+      "publisher": "TSE",
+      "description": "Complementary candidate registry; its vote destination type establishes that ballot 28 was totaled as a technical null."
+    },
+    {
+      "id": "ibge-municipality-mesh",
+      "path": "ibge/municipality-mesh.geojson",
+      "url": "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&qualidade=minima&intrarregiao=municipio",
+      "bytes": 3605638,
+      "sha256": "5efffedf8772dc8654322affafac4e3e8b001839e7c2af5cab4eb1094dcd6240",
+      "retrieved": "2026-10-27",
+      "publisher": "IBGE",
+      "description": "Municipality polygons, IBGE mesh API v3, minimum quality.",
+      "decodeGzip": true
+    },
+    {
+      "id": "ibge-state-mesh",
+      "path": "ibge/state-mesh.geojson",
+      "url": "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&qualidade=minima&intrarregiao=UF",
+      "bytes": 98502,
+      "sha256": "07c671aa87aa1ab296c446de6294df9827112782537b996c0a160284907e7c0f",
+      "retrieved": "2026-10-27",
+      "publisher": "IBGE",
+      "description": "State polygons, IBGE mesh API v3, minimum quality.",
+      "decodeGzip": true
+    },
+    {
+      "id": "ibge-municipalities",
+      "path": "ibge/municipalities.json",
+      "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios",
+      "bytes": 2470036,
+      "sha256": "86ecdccdf97d72e7e5e46f0854cfcea8bacc28154cc1bc4ed0e6110e3a6c9c02",
+      "retrieved": "2026-10-27",
+      "publisher": "IBGE",
+      "description": "IBGE municipality registry with codes, names and states.",
+      "decodeGzip": true
+    },
+    {
+      "id": "ibge-states",
+      "path": "ibge/states.json",
+      "url": "https://servicodados.ibge.gov.br/api/v1/localidades/estados",
+      "bytes": 2446,
+      "sha256": "7ca1368dea3af83cba1af84ae8a7e88f1173c97586831d086cc8b3c1ba9c6596",
+      "retrieved": "2026-10-27",
+      "publisher": "IBGE",
+      "description": "IBGE state registry with codes and abbreviations.",
+      "decodeGzip": true
+    }
+  ]
+}

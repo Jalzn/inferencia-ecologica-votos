@@ -1,0 +1,223 @@
+.onboarding-replay {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #bccbd1;
+  border-radius: 50%;
+  background: var(--paper);
+  color: #395c70;
+  font-size: 14px;
+  font-weight: 700;
+}
+.onboarding-replay:hover {
+  background: #e9f0f2;
+}
+.onboarding-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  color: var(--ink);
+}
+.onboarding-dialog::backdrop {
+  background: transparent;
+}
+.onboarding-spotlight {
+  position: fixed;
+  pointer-events: none;
+  border: 2px solid #fffefa;
+  border-radius: 13px;
+  box-shadow: 0 0 0 100vmax rgb(13 29 39 / 66%);
+}
+.onboarding-card {
+  position: fixed;
+  box-sizing: border-box;
+  width: min(360px, calc(100vw - 32px));
+  padding: 28px;
+  border: 1px solid #dce5e7;
+  border-radius: 15px;
+  background: var(--paper);
+  box-shadow: 0 12px 50px rgb(7 21 31 / 24%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+.onboarding-card-heading,
+.onboarding-card-actions {
+  flex-shrink: 0;
+}
+.onboarding-copy {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.onboarding-copy:focus-visible {
+  outline-offset: -3px;
+}
+.onboarding-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: transparent;
+  border: 1px solid #dce5e7;
+  border-radius: 50%;
+  color: #455d6b;
+  font-size: 23px;
+  line-height: 1;
+}
+.onboarding-close:hover {
+  background: #eef2f2;
+}
+.onboarding-eyebrow {
+  display: block;
+  margin: 2px 30px 17px 0;
+  color: #496c80;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+.onboarding-card h2 {
+  margin: 0 18px 17px 0;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: -1px;
+  line-height: 1.22;
+}
+.onboarding-card p {
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #455d6b;
+}
+.onboarding-card strong {
+  font-weight: 650;
+  color: #263f4d;
+}
+.onboarding-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 2px 0 21px;
+}
+.onboarding-colors span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #455d6b;
+  font-size: 11px;
+}
+.onboarding-colors i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.onboarding-red {
+  background: #c14e5e;
+}
+.onboarding-blue {
+  background: #346f9e;
+}
+.onboarding-card p.onboarding-action-hint {
+  font-size: 11px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.onboarding-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 15px;
+  border: 1px solid #274c61;
+  border-radius: 8px;
+  background: #274c61;
+  color: #fffefa;
+  font-size: 13px;
+  font-weight: 600;
+}
+.onboarding-primary:hover {
+  background: #183d53;
+}
+.onboarding-primary span {
+  font-size: 19px;
+  line-height: 1;
+}
+.onboarding-card p.onboarding-note {
+  margin: 15px 0 0;
+  color: #596e7a;
+  font-size: 10px;
+  line-height: 1.6;
+}
+@media (max-width: 700px) {
+  .onboarding-replay {
+    width: 27px;
+    height: 27px;
+    font-size: 13px;
+  }
+  .onboarding-card {
+    padding: 24px;
+  }
+  .onboarding-card h2 {
+    font-size: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .onboarding-dialog *,
+  .onboarding-dialog *::before,
+  .onboarding-dialog *::after {
+    animation: none;
+    transition: none;
+  }
+}
+@media (max-height: 500px) {
+  .onboarding-card {
+    padding: 16px;
+  }
+  .onboarding-close {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 21px;
+  }
+  .onboarding-eyebrow {
+    font-size: 8px;
+    margin-bottom: 10px;
+  }
+  .onboarding-card h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .onboarding-card p {
+    font-size: 12px;
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .onboarding-colors {
+    margin-bottom: 12px;
+  }
+  .onboarding-card p.onboarding-note {
+    font-size: 9px;
+    line-height: 1.4;
+    margin-top: 8px;
+  }
+}

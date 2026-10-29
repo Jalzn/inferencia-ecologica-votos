@@ -1,0 +1,29 @@
+{
+  "id": "2026-v3",
+  "label": "Modelo municipal · 12 cenários",
+  "description": "Penalized ecological regression (national, state, municipal), selection of the municipal penalty by held-out aggregate prediction, section IPF, and 12 sensitivity scenarios.",
+  "statePenalty": 10000,
+  "probabilityFloor": 0.0001,
+  "folds": {"train": [2, 3, 4], "validation": [1], "holdout": [0]},
+  "candidates": [
+    {"id": "state_pooled", "label": "Matrizes estaduais com agrupamento", "level": "state"},
+    {"id": "municipal_100", "label": "Municipal, penalidade 100", "level": "municipal", "municipalPenalty": 100},
+    {"id": "municipal_300", "label": "Municipal, penalidade 300", "level": "municipal", "municipalPenalty": 300},
+    {"id": "municipal_1000", "label": "Municipal, penalidade 1.000", "level": "municipal", "municipalPenalty": 1000},
+    {"id": "municipal_3000", "label": "Municipal, penalidade 3.000", "level": "municipal", "municipalPenalty": 3000},
+    {"id": "municipal_10000", "label": "Municipal, penalidade 10.000", "level": "municipal", "municipalPenalty": 10000},
+    {"id": "municipal_100000", "label": "Municipal, penalidade 100.000", "level": "municipal", "municipalPenalty": 100000}
+  ],
+  "sensitivityModels": [
+    {"id": "national_matrix", "label": "Matriz nacional única", "level": "national"},
+    {"id": "state_unpooled", "label": "Matrizes estaduais sem agrupamento", "level": "state", "statePenalty": 0},
+    "state_pooled", "municipal_100", "municipal_300", "municipal_1000", "municipal_3000", "municipal_10000", "municipal_100000"
+  ],
+  "variants": [
+    {"id": "registry_mobility", "label": "Modelo escolhido, mobilidade pelo cadastro de transferências", "mobility": "registry"},
+    {"id": "turnover_0_5pct", "label": "Modelo escolhido, troca adicional de 0,5% entre seções", "mobility": "net", "turnover": 0.005},
+    {"id": "floor_1e-6", "label": "Modelo escolhido, piso de probabilidade 0,000001", "probabilityFloor": 0.000001}
+  ],
+  "sensitivityDescription": "Mínimo e máximo desta estimativa entre 12 especificações: o grau de agrupamento geográfico do modelo (matriz nacional única, matrizes estaduais com e sem agrupamento e seis níveis de penalidade municipal), duas hipóteses de mobilidade de eleitores entre seções e um piso de probabilidade menor. Todas supõem que eleitores de uma mesma origem se comportam de forma parecida dentro de cada município. A faixa não cobre a variação de comportamento por contexto dentro do município, que pode deslocar estimativas em vários pontos percentuais. Não é um intervalo de confiança.",
+  "boundsDescription": "O que as contagens por seção permitem sem a regressão ecológica, sob duas hipóteses: o eleitorado é o mesmo nos dois turnos, e em cada seção entram e saem no máximo tantos eleitores quanto no cenário de maior mobilidade considerado (variação do eleitorado da seção, cadastro de transferências temporárias ou troca adicional de 0,5%). Cada limite vale para esta célula isoladamente; os extremos não ocorrem necessariamente juntos. Não é uma faixa de probabilidade."
+}

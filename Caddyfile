@@ -1,0 +1,25 @@
+{
+	admin off
+	persist_config off
+	auto_https off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	header X-Content-Type-Options nosniff
+
+	handle /health {
+		respond "ok" 200
+	}
+
+	handle /data/* {
+		header Cache-Control "no-cache"
+		file_server
+	}
+
+	handle {
+		encode zstd gzip
+		try_files {path} /index.html
+		file_server
+	}
+}

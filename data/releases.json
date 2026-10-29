@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0",
+  "releases": [
+    {
+      "datasetVersion": "2026-v3-20261029-93230d180f36",
+      "runId": "2026-v3-20261029-93230d180f36",
+      "scope": "full",
+      "resultsSha256": "e6deaea8b98ec473538dcb0a19ff080a83cb219263d8247781bf500f73411968",
+      "panelSha256": "69dbe9e3664f2b9f65405fd6e530c1d96466da5c1d3fa14fa115fc537dce03c5",
+      "analysisRevision": "4c2db96d2f6058f40eda5dc3ffedc083d39a4dd8",
+      "exportRevision": "4c2db96d2f6058f40eda5dc3ffedc083d39a4dd8",
+      "archive": {
+        "path": "releases/elections-2026-v3-20261029-93230d180f36.tar.gz",
+        "checksumPath": "releases/elections-2026-v3-20261029-93230d180f36.tar.gz.sha256",
+        "sha256": "e96ced89bb7af1e801be36ea2e0af1034abccd734e1bb6cb65c33e5e35598fd9",
+        "bytes": 9667630,
+        "expandedBytes": 10432017,
+        "files": 32
+      },
+      "analysisSource": {
+        "path": "releases/elections-analysis-source-54180f70d3c4.tar.gz",
+        "checksumPath": "releases/elections-analysis-source-54180f70d3c4.tar.gz.sha256",
+        "sha256": "0f0f20148974c168e53cfba072ab190693888738115188b32db667ce451d8dc6",
+        "bytes": 76552,
+        "pipelineSourceSha256": "54180f70d3c4f74990e8d7cebb8fecd91222e1985a44f9918af680b728394499",
+        "files": 32
+      }
+    }
+  ],
+  "status": "Release assets preserve the complete dataset and its generating computation source independently of the publication Git history.",
+  "fixturePath": "fixtures/public/manifest.json"
+}

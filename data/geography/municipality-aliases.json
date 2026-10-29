@@ -1,0 +1,18 @@
+{
+  "description": "Reviewed links between TSE municipality names and IBGE registry names that differ after normalization. Each link is one-to-one within the state. No automatic fuzzy matching is used.",
+  "aliases": {
+    "GO:92690": {"ibgeCode": "5203500", "tseName": "BOM JESUS", "ibgeName": "Bom Jesus de Goiás", "reason": "Municipal name documented by the Goiás Legislative Assembly; unique match in the state.", "sources": ["https://portal.al.go.leg.br/noticias/163093", "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/93729/pdf"]},
+    "MG:41092": {"ibgeCode": "3105509", "tseName": "BARÃO DE MONTE ALTO", "ibgeName": "Barão do Monte Alto", "reason": "Preposition variant; unique match in the state."},
+    "MG:44571": {"ibgeCode": "3122900", "tseName": "DONA EUSÉBIA", "ibgeName": "Dona Euzébia", "reason": "Spelling variant s/z; unique match in the state."},
+    "MG:53031": {"ibgeCode": "3165206", "tseName": "SÃO THOMÉ DAS LETRAS", "ibgeName": "São Tomé das Letras", "reason": "Spelling variant Thomé/Tomé; unique match in the state."},
+    "MT:91553": {"ibgeCode": "5107800", "tseName": "SANTO ANTÔNIO DO LEVERGER", "ibgeName": "Santo Antônio de Leverger", "reason": "Preposition variant do/de; unique match in the state with the distinctive term Leverger."},
+    "PA:4120": {"ibgeCode": "1502954", "tseName": "ELDORADO DOS CARAJÁS", "ibgeName": "Eldorado do Carajás", "reason": "Preposition variant dos/do; unique match in the state."},
+    "PR:77119": {"ibgeCode": "4116307", "tseName": "MUNHOZ DE MELLO", "ibgeName": "Munhoz de Melo", "reason": "Spelling variant Mello/Melo; unique match in the state."},
+    "RN:17035": {"ibgeCode": "2405306", "tseName": "BOA SAÚDE", "ibgeName": "Januário Cicco", "reason": "Alternative name explicitly documented by government sources; not inferred from text similarity.", "sources": ["https://www.al.rn.leg.br/documentos/ALRN_Livro_Historia_Municipios_do_RN.pdf", "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/pagamento-unificado-do-bolsa-familia-chega-a-familias-de-171-municipios-em-fevereiro/"]},
+    "RO:256": {"ibgeCode": "1100098", "tseName": "ESPIGÃO DO OESTE", "ibgeName": "Espigão D'Oeste", "reason": "Preposition contraction DO/D'; unique match in the state."},
+    "RO:337": {"ibgeCode": "1100346", "tseName": "ALVORADA DO OESTE", "ibgeName": "Alvorada D'Oeste", "reason": "Preposition contraction DO/D'; unique match in the state."},
+    "RR:3158": {"ibgeCode": "1400605", "tseName": "SÃO LUIZ", "ibgeName": "São Luiz do Anauá", "reason": "Name change documented by the Roraima electoral court and Legislative Assembly.", "sources": ["https://www.tre-rr.jus.br/institucional/zonas-eleitorais/4a-zona-eleitoral", "https://al.rr.leg.br/2024/11/05/sao-luiz-do-anaua-deputados-aprovam-pl-que-altera-oficialmente-nome-de-municipio/"]},
+    "SE:31011": {"ibgeCode": "2800100", "tseName": "AMPARO DE SÃO FRANCISCO", "ibgeName": "Amparo do São Francisco", "reason": "Preposition variant de/do; unique match in the state."},
+    "SP:71013": {"ibgeCode": "3550001", "tseName": "SÃO LUÍS DO PARAITINGA", "ibgeName": "São Luiz do Paraitinga", "reason": "Spelling variant Luís/Luiz; unique match in the state."}
+  }
+}

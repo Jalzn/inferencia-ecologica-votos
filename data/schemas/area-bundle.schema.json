@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elections.local/schemas/area-bundle.schema.json",
+  "title": "Eleições area bundle",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "datasetVersion",
+    "id",
+    "level",
+    "place",
+    "children",
+    "geometry",
+    "layers",
+    "defaultLayer"
+  ],
+  "$defs": {
+    "range": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "finalistRanges": {
+      "type": "object",
+      "required": [
+        "lula",
+        "flavio"
+      ],
+      "properties": {
+        "lula": {
+          "$ref": "#/$defs/range"
+        },
+        "flavio": {
+          "$ref": "#/$defs/range"
+        }
+      },
+      "additionalProperties": false
+    },
+    "flowRow": {
+      "type": "object",
+      "required": [
+        "originId",
+        "observed",
+        "estimated",
+        "sensitivity",
+        "identificationBounds"
+      ],
+      "properties": {
+        "originId": {
+          "type": "string"
+        },
+        "observed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "estimated": {
+          "type": "object",
+          "required": [
+            "lula",
+            "flavio",
+            "blank",
+            "null",
+            "abstention"
+          ],
+          "properties": {
+            "lula": {
+              "type": "number",
+              "minimum": 0
+            },
+            "flavio": {
+              "type": "number",
+              "minimum": 0
+            },
+            "blank": {
+              "type": "number",
+              "minimum": 0
+            },
+            "null": {
+              "type": "number",
+              "minimum": 0
+            },
+            "abstention": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "sensitivity": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/finalistRanges"
+            }
+          ]
+        },
+        "identificationBounds": {
+          "$ref": "#/$defs/finalistRanges"
+        }
+      },
+      "additionalProperties": false
+    },
+    "place": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "stateCode",
+        "kind",
+        "parentId",
+        "electorate",
+        "sectionCount",
+        "rows"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "stateCode": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "national",
+            "state",
+            "municipality",
+            "foreign"
+          ]
+        },
+        "parentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "electorate": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sectionCount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ibgeCode": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 16,
+          "items": {
+            "$ref": "#/$defs/flowRow"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "featureCollection": {
+      "type": "object",
+      "required": [
+        "type",
+        "features"
+      ],
+      "properties": {
+        "type": {
+          "const": "FeatureCollection"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type",
+              "properties",
+              "geometry"
+            ],
+            "properties": {
+              "type": {
+                "const": "Feature"
+              },
+              "id": {
+                "type": "string"
+              },
+              "properties": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "geometry": {
+                "type": "object",
+                "required": [
+                  "type",
+                  "coordinates"
+                ],
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "Polygon",
+                      "MultiPolygon"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "bbox": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "schemaVersion": {
+      "const": "2.0"
+    },
+    "datasetVersion": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "level": {
+      "enum": [
+        "national",
+        "state"
+      ]
+    },
+    "place": {
+      "$ref": "#/$defs/place"
+    },
+    "children": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/place"
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/featureCollection"
+      }
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "states",
+              "municipalities"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "kind": {
+            "const": "polygon"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "defaultLayer": {
+      "enum": [
+        "states",
+        "municipalities"
+      ]
+    },
+    "sourceLabel": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "2.0",
+  "datasetVersion": "2026-v3-20261029-93230d180f36-fixture",
+  "scope": "fixture",
+  "runId": "2026-v3-20261029-93230d180f36",
+  "statePackages": 1,
+  "municipalities": 5571,
+  "foreignLocalities": 146,
+  "maximumRowError": 2.621859312057495e-05,
+  "totalBytes": 2367357,
+  "elapsedSeconds": 4.3
+}
